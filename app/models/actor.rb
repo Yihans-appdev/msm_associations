@@ -17,4 +17,5 @@ class Actor < ApplicationRecord
     uniqueness: { scope: :dob, message: "with this DOB already exists" }
     
   has_many :characters
+  has_many :movies, :through => characters
 end

@@ -15,4 +15,6 @@ class Director < ApplicationRecord
   validates :name, 
     presence: true,
     uniqueness: { scope: :dob, message: "already exists with this birth date"}
+   has_many :movies 
+  #has_many(:movies, class_name: "Movie", foreign_key: "director_id")
 end

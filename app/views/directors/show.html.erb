@@ -14,8 +14,8 @@
       <dt>Bio</dt>
       <dd><%= @director.bio %></dd>
 
-      <dt>Image url</dt>
-      <dd><%= @director.image_url %></dd>
+      <dt>Image</dt>
+      <dd><img src="<%= @director.image_url %>"</dd>
 
       <dt>Number of movies</dt>
       <dd><%= Movie.where(:director_id => @director.id).count %></dd>
@@ -23,7 +23,7 @@
       <dt>Filmography</dt>
       <dd>
         <ul class="list-group">
-          <% @movies.each do |movie| %>
+          <% @director.movies.each do |movie| %>
             <li class="list-group-item">
               <a href="/movies/<%= movie.id %>">
                 <%= movie.title %>

@@ -15,4 +15,6 @@ class Actor < ApplicationRecord
   validates :name,
     presence: true,
     uniqueness: { scope: :dob, message: "with this DOB already exists" }
+    
+  has_many :characters
 end
